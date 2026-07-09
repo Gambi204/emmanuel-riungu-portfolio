@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
       variants={fadeInUp as Variants}
-      className="bg-[#020617] border border-[#1E293B] rounded-2xl overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(56,189,248,0.1)] transition-all duration-300"
+      className="h-full bg-[#020617] border border-[#1E293B] rounded-2xl overflow-hidden group hover:-translate-y-2 hover:border-[#38BDF8]/30 hover:shadow-[0_20px_40px_-15px_rgba(56,189,248,0.12)] transition-all duration-300"
     >
       <div className="h-48 bg-linear-to-br from-[#0F172A] to-[#1E293B] relative overflow-hidden border-b border-[#1E293B]">
         <div
@@ -26,12 +26,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
 
-      <div className="p-6">
-        <p className="text-[#94A3B8] mb-6 min-h-20 text-sm leading-relaxed">
+      <div className="p-5 sm:p-6 flex flex-col h-[calc(100%-12rem)]">
+        <p className="text-[#94A3B8] mb-6 text-sm leading-relaxed">
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-6 min-h-15">
+        <div className="flex flex-wrap gap-2 mb-6">
           {project.tech.map((tech) => (
             <span
               key={tech}
@@ -42,7 +42,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </div>
 
-        <div className="space-y-2 mb-6 min-h-20">
+        <div className="space-y-2 mb-6">
           {project.highlights.map((highlight) => (
             <p
               key={highlight}

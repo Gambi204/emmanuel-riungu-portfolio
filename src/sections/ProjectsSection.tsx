@@ -8,7 +8,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="py-24 px-6 md:px-12 max-w-360 mx-auto bg-[#0F172A]/30 rounded-[3rem]"
+      className="py-20 md:py-24 px-6 md:px-12 max-w-360 mx-auto bg-[#0F172A]/30 rounded-4xl md:rounded-[3rem]"
     >
       <motion.div
         initial="hidden"
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8"
       >
         {projects.map((project) => (
           <ProjectCard key={project.title} project={project} />
