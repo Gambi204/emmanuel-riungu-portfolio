@@ -99,7 +99,7 @@ export default function HeroSection() {
             transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
           },
         }}
-        className="flex-1 relative flex justify-center lg:justify-end w-full max-w-md lg:max-w-none mx-auto lg:mx-0 pt-8 lg:pt-0"
+        className="flex-1 relative flex justify-center lg:justify-end w-full max-w-md lg:max-w-none mx-auto lg:mx-0 pt-8 pb-24 sm:pb-20 lg:pb-0 lg:pt-0"
       >
         <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-3xl bg-linear-to-tr from-[#0F172A] to-[#1E293B] p-2 shadow-[0_0_60px_rgba(56,189,248,0.15)] group">
           <img
@@ -111,7 +111,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -top-6 right-0 sm:-right-6 glass-card px-4 py-3 rounded-xl flex items-center gap-3 shadow-lg"
+            className="absolute -top-5 right-2 sm:right-0 md:-right-6 glass-card px-3 py-2 sm:px-4 sm:py-3 rounded-xl flex items-center gap-2 sm:gap-3 shadow-lg z-20"
           >
             <div className="text-[#38BDF8]">
               <Code2 size={24} />
@@ -130,7 +130,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-4 left-0 sm:-left-8 glass-card px-4 py-3 rounded-xl flex items-center gap-3 shadow-lg"
+            className="absolute bottom-16 left-2 sm:-bottom-4 sm:left-0 md:-left-8 glass-card px-3 py-2 sm:px-4 sm:py-3 rounded-xl flex items-center gap-2 sm:gap-3 shadow-lg z-10"
           >
             <div className="text-[#38BDF8]">
               <Layout size={24} />
@@ -148,13 +148,13 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="absolute -bottom-16 right-0 sm:-bottom-10 sm:-right-4 glass-card p-4 rounded-xl border border-[#38BDF8]/30 shadow-2xl backdrop-blur-xl"
+            className="absolute -bottom-20 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-bottom-10 sm:right-0 md:-right-4 glass-card p-4 rounded-xl border border-[#38BDF8]/30 shadow-2xl backdrop-blur-xl w-[92%] sm:w-auto z-20"
           >
             <p className="text-xs text-[#94A3B8] font-semibold uppercase tracking-wider mb-2">
               Core Stack
             </p>
 
-            <div className="grid grid-cols-2 gap-x-6 gap-y-1 text-sm font-medium">
+            <div className="grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-1 text-xs sm:text-sm font-medium">
               {[
                 'Java',
                 'Spring Boot',

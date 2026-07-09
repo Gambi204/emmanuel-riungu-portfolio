@@ -36,22 +36,22 @@ export default function JourneySection() {
               className="relative pl-8 md:pl-0"
             >
               <div
-                className={`hidden md:block absolute left-1/2 -translate-x-1/2 -top-1 w-4 h-4 rounded-full bg-[#020617] border-2 ${
-                  item.current
-                    ? 'border-[#38BDF8] shadow-[0_0_15px_#38BDF8] animate-pulse w-5 h-5'
+                className={`hidden md:block absolute left-1/2 -translate-x-1/2 -top-1 rounded-full border-2 ${
+                    item.current
+                    ? 'w-5 h-5 bg-[#38BDF8] border-[#38BDF8] ring-4 ring-[#38BDF8]/20 shadow-[0_0_22px_rgba(56,189,248,0.95)] animate-pulse'
                     : item.accent
-                      ? 'border-[#38BDF8] shadow-[0_0_10px_#38BDF8]'
-                      : 'border-[#1E293B]'
+                        ? 'w-4 h-4 bg-[#020617] border-[#38BDF8] shadow-[0_0_10px_#38BDF8]'
+                        : 'w-4 h-4 bg-[#020617] border-[#1E293B]'
                 }`}
               />
 
               <div
-                className={`md:hidden absolute -left-2.25 top-1 w-4 h-4 rounded-full bg-[#020617] border-2 ${
-                  item.current
-                    ? 'border-[#38BDF8] shadow-[0_0_15px_#38BDF8] animate-pulse w-5 h-5 -translate-x-1/2'
+                className={`md:hidden absolute -left-2.25 top-1 rounded-full border-2 ${
+                    item.current
+                    ? 'w-5 h-5 -translate-x-1/2 bg-[#38BDF8] border-[#38BDF8] ring-4 ring-[#38BDF8]/20 shadow-[0_0_22px_rgba(56,189,248,0.95)] animate-pulse'
                     : item.accent
-                      ? 'border-[#38BDF8] shadow-[0_0_10px_#38BDF8]'
-                      : 'border-[#1E293B]'
+                        ? 'w-4 h-4 bg-[#020617] border-[#38BDF8] shadow-[0_0_10px_#38BDF8]'
+                        : 'w-4 h-4 bg-[#020617] border-[#1E293B]'
                 }`}
               />
 
