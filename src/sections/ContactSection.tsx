@@ -2,6 +2,7 @@ import { motion, type Variants } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { scaleIn } from '../utils/animations';
+import { siteConfig } from '../data/site';
 
 export default function ContactSection() {
   return (
@@ -25,14 +26,14 @@ export default function ContactSection() {
 
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
         <a
-          href="mailto:mugambiriungu1@gmail.com"
+          href={`mailto:${siteConfig.email}`}
           className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-[#F8FAFC] text-[#020617] rounded-xl font-bold hover:bg-[#E2E8F0] transition-colors hover:-translate-y-1"
         >
           <Mail size={20} /> Email Me
         </a>
 
         <a
-          href="https://github.com/Gambi204"
+          href={siteConfig.github}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 glass-card text-[#F8FAFC] rounded-xl font-bold hover:bg-[#1E293B] transition-all hover:-translate-y-1"
@@ -41,7 +42,7 @@ export default function ContactSection() {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/emmanuel-riungu-0315a5260/"
+          href={siteConfig.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 glass-card text-[#38BDF8] border-[#38BDF8]/20 rounded-xl font-bold hover:bg-[#38BDF8]/10 transition-all hover:-translate-y-1"

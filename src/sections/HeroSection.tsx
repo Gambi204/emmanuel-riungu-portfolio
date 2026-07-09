@@ -3,6 +3,7 @@ import { ChevronRight, CheckCircle2, Code2, Download, Layout } from 'lucide-reac
 import profileImage from '../assets/profile.jpeg';
 import { staggerContainer } from '../utils/animations';
 import { scrollTo } from '../utils/scrollTo';
+import { siteConfig } from '../data/site';
 
 const heroFadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -70,7 +71,7 @@ export default function HeroSection() {
           </button>
 
           <a
-            href="/Emmanuel_Riungu_CV.pdf"
+            href={siteConfig.cvPath}
             download
             className="w-full sm:w-auto px-6 py-3 rounded-lg glass-card text-[#F8FAFC] font-semibold hover:bg-[#1E293B] transition-all flex items-center justify-center gap-2 hover:scale-105 active:scale-95 border border-[#1E293B] hover:border-[#94A3B8]/50"
           >
