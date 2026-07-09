@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { 
-  ExternalLink, Mail, Terminal, Database, Layout, Server, Briefcase, CheckCircle2
+  Mail, Briefcase
 } from 'lucide-react';
 
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
@@ -9,34 +9,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
-// --- DATA: Mimicking src/data/ ---
+import SkillsSection from './sections/SkillsSection';
+import ProjectsSection from './sections/ProjectsSection';
 
-const PROJECTS = [
-  {
-    title: 'MaziwaFarm',
-    description: 'Full-stack dairy farm management portal for tracking cow health, milk production, staff tasks, financial reports, and role-based workflows.',
-    tech: ['React', 'Vite', 'CSS3', 'Axios', 'Node.js', 'Express.js', 'PostgreSQL', 'JWT'],
-    highlights: ['RBAC', 'dashboards', 'financial reporting', 'CSV export', 'print reports', 'dark/light mode'],
-    github: 'https://github.com/Gambi204',
-    gradient: 'from-[#38BDF8] to-transparent'
-  },
-  {
-    title: 'JikoTrack',
-    description: 'Restaurant operations system designed to support accounting and inventory management for small restaurants.',
-    tech: ['Django', 'Django REST Framework', 'MySQL', 'Nuxt', 'Vue', 'Tailwind CSS'],
-    highlights: ['Inventory tracking', 'accounting workflows', 'staff coordination', 'business process improvement'],
-    github: 'https://github.com/Gambi204',
-    gradient: 'from-[#22C55E] to-transparent'
-  },
-  {
-    title: 'Personal Portfolio Website',
-    description: 'Modern frontend portfolio website showcasing backend experience, frontend growth, and full-stack engineering direction.',
-    tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Motion', 'Netlify'],
-    highlights: ['Responsive design', 'animations', 'component architecture', 'recruiter-focused storytelling'],
-    github: 'https://github.com/Gambi204',
-    gradient: 'from-[#818CF8] to-transparent'
-  }
-];
 
 const TIMELINE = [
   {
@@ -69,138 +44,13 @@ const fadeInUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
 };
 
-const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
 
 const scaleIn: Variants = {
   hidden: { opacity: 0, scale: 0.9 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } }
 };
 
-// --- SECTIONS: Mimicking src/sections/ ---
-const SkillsSection = () => {
-  const skillGroups = [
-    {
-      title: "Backend Engineering",
-      icon: <Server size={24} />,
-      skills: ['Java', 'Spring Boot', 'REST APIs', 'MySQL', 'PostgreSQL', 'Authentication', 'OOP', 'MVC'],
-      accent: 'border-[#38BDF8]/50'
-    },
-    {
-      title: "Frontend Engineering",
-      icon: <Layout size={24} />,
-      skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Tailwind CSS', 'Responsive Design'],
-      accent: 'border-[#38BDF8]/50'
-    },
-    {
-      title: "Tools & Workflow",
-      icon: <Terminal size={24} />,
-      skills: ['Git', 'GitHub', 'Postman', 'IntelliJ IDEA', 'VS Code', 'Figma', 'Netlify'],
-      accent: 'border-[#38BDF8]/50'
-    },
-    {
-      title: "Currently Learning",
-      icon: <Database size={24} />,
-      skills: ['Next.js', 'Frontend Testing', 'Docker', 'Cloud Deployment', 'Full-Stack System Design'],
-      accent: 'border-[#22C55E]/50',
-      isLearning: true
-    }
-  ];
-
-  return (
-    <section id="skills" className="py-24 px-6 md:px-12 max-w-360 mx-auto relative">
-      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Technical Arsenal</h2>
-        <p className="text-[#94A3B8] max-w-2xl mx-auto">A comprehensive toolkit spanning from server-side logic to client-side rendering.</p>
-      </motion.div>
-
-      <motion.div 
-        initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-      >
-        {skillGroups.map((group, idx) => (
-          <motion.div
-            key={idx}
-            variants={fadeInUp}
-            className={`bg-[#0F172A] border border-[#1E293B] rounded-2xl p-6 transition-colors group relative overflow-hidden ${
-              group.isLearning ? 'hover:border-[#22C55E]/50' : 'hover:border-[#38BDF8]/50'
-            }`}
-          >
-            {group.isLearning && <div className="absolute top-0 right-0 w-32 h-32 bg-[#22C55E]/5 rounded-bl-full -z-10"></div>}
-            <div className={`w-12 h-12 rounded-lg ${group.isLearning ? 'bg-[#22C55E]/10 text-[#22C55E]' : 'bg-[#38BDF8]/10 text-[#38BDF8]'} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-              {group.icon}
-            </div>
-            <h3 className="text-xl font-bold mb-4">{group.title}</h3>
-            <ul className="space-y-2 text-[#94A3B8]">
-              {group.skills.map(skill => (
-                <li key={skill} className="flex items-center gap-2">
-                  <div className={`w-1.5 h-1.5 rounded-full ${group.isLearning ? 'bg-[#22C55E]' : 'bg-[#38BDF8]'}`}></div>
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-      </motion.div>
-    </section>
-  );
-};
-
-const ProjectsSection = () => (
-  <section id="projects" className="py-24 px-6 md:px-12 max-w-360 mx-auto bg-[#0F172A]/30 rounded-[3rem]">
-    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="mb-16 md:flex justify-between items-end">
-      <div>
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Featured Projects</h2>
-        <p className="text-[#94A3B8] max-w-2xl">End-to-end applications demonstrating problem-solving, architectural decisions, and clean UI.</p>
-      </div>
-      <a href="https://github.com/Gambi204" target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center gap-2 text-[#38BDF8] hover:text-[#F8FAFC] transition-colors font-semibold">
-        View All on GitHub <ExternalLink size={18} />
-      </a>
-    </motion.div>
-
-    <motion.div 
-      initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
-      className="grid grid-cols-1 lg:grid-cols-3 gap-8"
-    >
-      {PROJECTS.map((project, idx) => (
-        <motion.div key={idx} variants={fadeInUp} className="bg-[#020617] border border-[#1E293B] rounded-2xl overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(56,189,248,0.1)] transition-all duration-300">
-          <div className="h-48 bg-linear-to-br from-[#0F172A] to-[#1E293B] relative overflow-hidden border-b border-[#1E293B]">
-             <div className={`absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] ${project.gradient}`}></div>
-             <div className="absolute bottom-4 left-6">
-               <h3 className="text-2xl font-bold text-[#F8FAFC]">{project.title}</h3>
-             </div>
-          </div>
-          <div className="p-6">
-            <p className="text-[#94A3B8] mb-6 min-h-20 text-sm leading-relaxed">{project.description}</p>
-            <div className="flex flex-wrap gap-2 mb-6 min-h-15">
-              {project.tech.map(tech => (
-                <span key={tech} className="px-2.5 py-1 text-xs font-semibold rounded-md bg-[#0F172A] text-[#38BDF8] border border-[#1E293B]">{tech}</span>
-              ))}
-            </div>
-            <div className="space-y-2 mb-6 min-h-20">
-              {project.highlights.map(highlight => (
-                <p key={highlight} className="text-sm flex items-center gap-2 text-[#F8FAFC]">
-                  <CheckCircle2 size={14} className="text-[#22C55E] shrink-0" /> {highlight}
-                </p>
-              ))}
-            </div>
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#F8FAFC] hover:text-[#38BDF8] transition-colors">
-              <FaGithub size={16} /> View Source
-            </a>
-          </div>
-        </motion.div>
-      ))}
-      <a href="https://github.com/Gambi204" target="_blank" rel="noopener noreferrer" className="md:hidden w-full flex items-center justify-center gap-2 py-3 rounded-lg border border-[#1E293B] text-[#F8FAFC] hover:bg-[#1E293B] transition-colors font-semibold mt-4">
-        View All on GitHub <ExternalLink size={18} />
-      </a>
-    </motion.div>
-  </section>
-);
+// --- SECTIONS: Mimicking src/sections/ --
 
 const ExperienceSection = () => (
   <motion.section 
