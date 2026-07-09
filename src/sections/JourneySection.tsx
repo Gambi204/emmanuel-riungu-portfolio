@@ -6,7 +6,7 @@ export default function JourneySection() {
   return (
     <section
       id="journey"
-      className="py-24 px-6 md:px-12 max-w-360 mx-auto bg-[#0F172A]/30"
+      className="py-20 md:py-24 px-6 md:px-12 max-w-360 mx-auto bg-[#0F172A]/30 rounded-4xl md:rounded-[3rem]"
     >
       <div className="max-w-4xl mx-auto">
         <motion.div
@@ -25,7 +25,7 @@ export default function JourneySection() {
           </p>
         </motion.div>
 
-        <div className="relative border-l-2 border-[#1E293B] ml-4 md:ml-0 md:pl-0 space-y-12">
+        <div className="relative border-l-2 md:border-l-0 border-[#1E293B] ml-4 md:ml-0 md:pl-0 space-y-10 md:space-y-12">
           {timeline.map((item, idx) => (
             <motion.div
               key={item.year}
@@ -56,8 +56,8 @@ export default function JourneySection() {
               />
 
               <div
-                className={`md:w-1/2 ${
-                  idx % 2 === 0
+                className={`rounded-2xl md:rounded-none bg-[#020617]/50 md:bg-transparent border border-[#1E293B] md:border-none p-5 md:p-0 md:w-1/2 ${
+                    idx % 2 === 0
                     ? 'md:pr-12 md:text-right'
                     : 'md:ml-auto md:pl-12 text-left'
                 }`}
@@ -74,8 +74,12 @@ export default function JourneySection() {
                   {item.year}
                 </span>
 
-                <h4 className="text-xl font-bold text-[#F8FAFC] mb-2">
-                  {item.title}
+                <h4
+                    className={`text-xl font-bold mb-2 ${
+                        item.current ? 'text-[#38BDF8]' : 'text-[#F8FAFC]'
+                    }`}
+                    >
+                    {item.title}
                 </h4>
 
                 <p className="text-[#94A3B8]">{item.description}</p>
