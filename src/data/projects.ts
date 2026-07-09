@@ -23,7 +23,7 @@ export const projects: Project[] = [
       'Print reports',
       'Dark/light mode',
     ],
-    github: 'https://github.com/Gambi204/dairyfarm-management-system',
+    github: 'https://github.com/Gambi204/dairyfarm-managment-system',
     gradient: 'from-[#38BDF8] to-transparent',
   },
   {
@@ -44,7 +44,7 @@ export const projects: Project[] = [
       'Staff coordination',
       'Business process improvement',
     ],
-    github: 'https://github.com/Gambi204/jikotrack',
+    github: 'https://github.com/BethwelKimutai/fullstackErpSystem',
     gradient: 'from-[#22C55E] to-transparent',
   },
   {
