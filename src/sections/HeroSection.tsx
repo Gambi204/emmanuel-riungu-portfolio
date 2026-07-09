@@ -101,7 +101,7 @@ export default function HeroSection() {
         }}
         className="flex-1 relative flex justify-center lg:justify-end w-full max-w-md lg:max-w-none mx-auto lg:mx-0 pt-8 lg:pt-0"
       >
-        <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-3xl bg-linear-to-tr from-[#0F172A] to-[#1E293B] p-2 shadow-[0_0_60px_rgba(56,189,248,0.15)] group">
+        <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-3xl bg-linear-to-tr from-[#0F172A] to-[#1E293B] p-2 shadow-[0_0_60px_rgba(56,189,248,0.15)] group">
           <img
             src={profileImage}
             alt="Emmanuel Mugambi Riungu"
@@ -111,7 +111,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -top-6 -right-6 glass-card px-4 py-3 rounded-xl flex items-center gap-3 shadow-lg"
+            className="absolute -top-6 right-0 sm:-right-6 glass-card px-4 py-3 rounded-xl flex items-center gap-3 shadow-lg"
           >
             <div className="text-[#38BDF8]">
               <Code2 size={24} />
@@ -130,7 +130,7 @@ export default function HeroSection() {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -bottom-4 -left-8 glass-card px-4 py-3 rounded-xl flex items-center gap-3 shadow-lg"
+            className="absolute -bottom-4 left-0 sm:-left-8 glass-card px-4 py-3 rounded-xl flex items-center gap-3 shadow-lg"
           >
             <div className="text-[#38BDF8]">
               <Layout size={24} />
@@ -148,7 +148,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 }}
-            className="absolute -bottom-10 -right-4 glass-card p-4 rounded-xl border border-[#38BDF8]/30 shadow-2xl backdrop-blur-xl"
+            className="absolute -bottom-16 right-0 sm:-bottom-10 sm:-right-4 glass-card p-4 rounded-xl border border-[#38BDF8]/30 shadow-2xl backdrop-blur-xl"
           >
             <p className="text-xs text-[#94A3B8] font-semibold uppercase tracking-wider mb-2">
               Core Stack
@@ -160,7 +160,7 @@ export default function HeroSection() {
                 'Spring Boot',
                 'React',
                 'TypeScript',
-                'PostgreSQL',
+                'MySQL',
                 'GitHub',
               ].map((tech) => (
                 <span key={tech} className="flex items-center gap-1.5">
