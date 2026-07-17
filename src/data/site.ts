@@ -11,3 +11,5 @@ export const siteConfig = {
   description:
     'I build reliable backend systems, clean user interfaces, and practical software products using Java, Spring Boot, React, TypeScript, and modern web technologies.',
 };
+
+//Updated CV
